@@ -1,13 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
+import Constrained_Width from '../Layout/Constrained_Width'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -18,7 +12,7 @@ const Top_Nav = ({blok}) => {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <Constrained_Width>
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -46,17 +40,17 @@ const Top_Nav = ({blok}) => {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {blok?.content?.Header_Menu.map((item) => (
                       <a
-                        key={item.name}
-                        href={item.href}
+                        key={item._uid}
+                        href={item?.Link?.cached_url}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
-                        {item.name}
+                        {item?.Title}
                       </a>
                     ))}
                   </div>
@@ -128,22 +122,22 @@ const Top_Nav = ({blok}) => {
                 </Menu>
               </div>
             </div>
-          </div>
+          </Constrained_Width>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {blok?.content?.Header_Menu?.map((item) => (
                 <Disclosure.Button
-                  key={item.name}
+                  key={item._uid}
                   as="a"
-                  href={item.href}
+                  href={item?.Link?.cached_url}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
-                  {item.name}
+                  {item.Title}
                 </Disclosure.Button>
               ))}
             </div>

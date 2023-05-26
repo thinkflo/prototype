@@ -1,20 +1,20 @@
 import "../styles/globals.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-import Feature from "../components/Feature";
-import Grid from "../components/Grid";
-import Page from "../components/Page";
-import Teaser from "../components/Teaser";
 import Layout from "../components/Layout/Layout";
+import Hero from "@/components/Content_Blocks/Hero";
+import Section_Content_Layout from "@/components/Content_Types/Section_Content_Layout";
+import CTA_Section from "@/components/Content_Blocks/CTA_Section";
+import Stats_Panels from "@/components/Content_Blocks/Stats_Panels";
 
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
-  page: Page,
+  Hero,
+  Section_Content_Layout,
+  CTA_Section,
+  Stats_Panels
 };
 
 storyblokInit({
-  accessToken: "HI5LwA7ybDxeH74FQrS55wtt",
+  accessToken: process.env.ACCESSTOKEN,
   use: [apiPlugin],
   components,
   apiOptions: {
@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
     <Layout {...pageProps}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Layout>
     </>
   )
