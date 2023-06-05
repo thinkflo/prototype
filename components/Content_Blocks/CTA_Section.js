@@ -43,6 +43,7 @@ const CTA_Section = ({blok}) => {
             {blok?.Links?.map(link => {
               return ( 
               <a
+                key={link?._uid}
                 href={link?.Link?.cached_url}
                 className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${colourSchemes[blok?.Colour_Scheme]?.cta || "text-white bg-indigo-600 hover:bg-indigo-500 focus-visible:outline-indigo-600"}`}
               >

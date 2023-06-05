@@ -6,13 +6,15 @@ import Section_Content_Layout from "@/components/Content_Types/Section_Content_L
 import CTA_Section from "@/components/Content_Blocks/CTA_Section";
 import Stats_Panels from "@/components/Content_Blocks/Stats_Panels";
 import Team_Section from "@/components/Content_Blocks/Team_Section";
+import Pricing_Table from "@/components/Content_Blocks/Pricing_Table";
 
 const components = {
   Hero,
   Section_Content_Layout,
   CTA_Section,
   Stats_Panels,
-  Team_Section
+  Team_Section,
+  Pricing_Table
 };
 
 storyblokInit({
