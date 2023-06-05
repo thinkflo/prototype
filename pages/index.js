@@ -12,10 +12,6 @@ export default function Home({ story, preview }) {
 
   return (
     <>
-      <Head>
-        <title>Homepage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <StoryblokComponent blok={story.content} />
     </>
   );

@@ -11,13 +11,6 @@ export default function Page({ story, preview }) {
 
 	return (
 		<>
-			<Head>
-				{/* <title>{story ? story.name : "Welcome to Insurance Bureau of Canada"}</title> */}
-				<link rel="icon" href="/favicon.ico" />
-				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-				<link rel="icon" type="image/png" href="/favicon.png" />
-			</Head>
-
 			{story?.content ? (
 				<StoryblokComponent
 					blok={story && story.content}
@@ -33,6 +26,10 @@ export async function getStaticProps(context) {
 
 	let sbParams = {
 		version: "published", // or 'draft'
+		resolve_relations: [
+			"Section_Navigator.Parent_Section",
+			"Team_Section.Members"
+		],
 	};
 
 	if (context.preview) {
@@ -90,53 +87,7 @@ export async function getStaticProps(context) {
 		data: { story: footer },
 	} = await storyblokApi.get("cdn/stories/global-components/footer");
 
-	const getTrendingNews = async (blocks) => {
-		const trendingNews = {};
-		if (blocks?.filter((blok) => blok.component === "Trending_News").length) {
-			return await Promise.allSettled(
-				blocks
-					?.filter((blok) => blok.component === "Trending_News")
-					.map(async (trendingNewsBlock) => {
-						trendingNews[trendingNewsBlock._uid] = {
-							filters: {
-								tagFilter: trendingNewsBlock?.Filter_By_Tags ?? null,
-								categoryFilter: trendingNewsBlock?.Filter_By_Category ?? null,
-								regionFilter: trendingNewsBlock?.Filter_By_Region ?? null,
-							},
-							newsArticles: await storyblokApi.get(
-								`cdn/stories?starts_with=news-insights/news/&sort_by=created_at:desc${
-									Boolean(trendingNewsBlock?.Filter_By_Category?.length)
-										? `&filter_query[Category][any_in_array]=${trendingNewsBlock?.Filter_By_Category?.join(
-												","
-										  )}`
-										: ""
-								}${
-									Boolean(trendingNewsBlock?.Filter_By_Region?.length)
-										? `&filter_query[Region][any_in_array]=${trendingNewsBlock?.Filter_By_Region?.join(
-												","
-										  )}`
-										: ""
-								}&is_startpage=0&per_page=6&page=1`
-							),
-						};
-					})
-			).then(() => trendingNews);
-		}
-	};
-
 	const blokData = {
-		trendingNews: Boolean(
-			story?.content?.Content_Blocks?.filter(
-				(blok) => blok.component === "Trending_News"
-			).length
-		)
-			? await getTrendingNews(story?.content?.Content_Blocks)
-			: null,
-		breadcrumbs: Boolean(
-			story?.content?.Hero && story?.content?.Hero[0]?.Display_Breadcrumbs
-		)
-			? await getBreadcrumbs(slug)
-			: null,
 		sectionChildren: Boolean(
 			story?.content?.Content_Blocks?.filter(
 				(blok) => blok.component === "Section_Navigator"
@@ -166,9 +117,6 @@ export async function getStaticPaths() {
 	let paths = [];
 	const skipSlugs = [
 		"homepage",
-		"industry-resources/events/",
-		"news-insights/latest-news",
-		"about/working-at-ibc/"
 	];
 
 	const skipMatches = [

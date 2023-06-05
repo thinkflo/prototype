@@ -18,7 +18,7 @@ const Footer = ({ blok }) => {
               Making the world a better place through constructing elegant hierarchies.
             </p>
             <div className="flex space-x-6">
-              {blok.content?.Socials?.map((item) => (
+              {blok?.content?.Socials?.map((item) => (
                 <a key={item.Title} href={item?.Link?.cached_url}>
                   <span className="sr-only">{item.Title}</span>
                   <img src={item?.Icon?.filename} className="h-6 w-6" />
