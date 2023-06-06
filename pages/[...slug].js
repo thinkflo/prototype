@@ -117,6 +117,7 @@ export async function getStaticPaths() {
 	let paths = [];
 	const skipSlugs = [
 		"homepage",
+		"company/team-members"
 	];
 
 	const skipMatches = [
