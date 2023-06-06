@@ -72,7 +72,7 @@ const Pricing_Table = ({blok}) => {
                 value={option}
                 className={({ checked }) =>
                   classNames(
-                    checked ? `${blok?.Colour_Scheme === "light" ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"}` : `${blok?.Colour_Scheme === "light" ? "text-gray-500" : "text-white"}`,
+                    checked ? `${blok?.Colour_Scheme === "light" ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"}` : `${blok?.Colour_Scheme === "light" ? "text-gray-500" : "text-gray-500"}`,
                     'cursor-pointer rounded-full px-2.5 py-1'
                   )
                 }
@@ -96,7 +96,7 @@ const Pricing_Table = ({blok}) => {
                 <h3
                   id={tier._uid}
                   className={classNames(
-                    tier.mostPopular || index == 1 ? `${blok?.Colour_Scheme === "light" ? "text-indigo-600" : "text-white"}` : `${colourSchemes[blok?.Colour_Scheme]?.panel?.title || "text-gray-900"}`,
+                    tier.mostPopular || index == 1 ? `${blok?.Colour_Scheme === "light" ? "text-indigo-600" : blok?.Colour_Scheme === "dark" ? "text-white" : "text-indigo-600"}` : `${colourSchemes[blok?.Colour_Scheme]?.panel?.title || "text-gray-900"}`,
                     'text-lg font-semibold leading-8'
                   )}
                 >
@@ -128,7 +128,7 @@ const Pricing_Table = ({blok}) => {
               <ul role="list" className={`mt-8 space-y-3 text-sm leading-6 xl:mt-10 ${colourSchemes[blok?.Colour_Scheme]?.panel?.features || "text-gray-600"}`}>
                 {tier?.Features?.map((feature) => (
                   <li key={feature.uid} className="flex gap-x-3">
-                    <CheckIcon className={`h-6 w-5 flex-none ${blok?.Colour_Scheme === "light" ? "text-indigo-600" : "text-white"} `} aria-hidden="true" />
+                    <CheckIcon className={`h-6 w-5 flex-none ${blok?.Colour_Scheme === "light" ? "text-indigo-600" : blok?.Colour_Scheme === "light" ? "text-white" : "text-indigo-600"} `} aria-hidden="true" />
                     {feature?.Title}
                   </li>
                 ))}

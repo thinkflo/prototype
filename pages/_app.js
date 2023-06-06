@@ -8,6 +8,7 @@ import Stats_Panels from "@/components/Content_Blocks/Stats_Panels";
 import Team_Section from "@/components/Content_Blocks/Team_Section";
 import Pricing_Table from "@/components/Content_Blocks/Pricing_Table";
 import Feature_Section from "@/components/Content_Blocks/Feature_Section";
+import Accordion from "@/components/Content_Blocks/Accordion";
 
 const components = {
   Hero,
@@ -16,7 +17,8 @@ const components = {
   Stats_Panels,
   Team_Section,
   Pricing_Table,
-  Feature_Section
+  Feature_Section,
+  Accordion
 };
 
 storyblokInit({
