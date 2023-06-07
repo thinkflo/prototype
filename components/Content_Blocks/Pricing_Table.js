@@ -108,14 +108,14 @@ const Pricing_Table = ({blok}) => {
                   </div>
                 ) : null}
               </div>
-              <p className={`mt-4 text-sm leading-6 ${colourSchemes[blok?.Colour_Scheme]?.panel?.blurb || "text-gray-600"}`}>{render(tier?.Blurb)}</p>
+              <div className={`mt-4 text-sm leading-6 ${colourSchemes[blok?.Colour_Scheme]?.panel?.blurb || "text-gray-600"}`}>{render(tier?.Blurb)}</div>
               <p className="mt-6 flex items-baseline gap-x-1">
                 <span className={`text-4xl font-bold tracking-tight ${colourSchemes[blok?.Colour_Scheme]?.panel?.value1 || "text-gray-900"}`}>{`$${frequency.value === "monthly" ? tier?.Amount_Monthly : tier?.Amount_Annualy}`}</span>
                 <span className={`text-sm font-semibold leading-6 ${colourSchemes[blok?.Colour_Scheme]?.panel?.value2 || "text-gray-600"}`}>{frequency?.priceSuffix}</span>
               </p>
               <a
-                href={tier.href}
-                aria-describedby={tier.id}
+                href={tier?.Link?.cached_url}
+                aria-describedby={tier._uid}
                 className={classNames(
                   tier.mostPopular || index == 1
                     ? `${blok?.Colour_Scheme === "light" ? "bg-indigo-600 text-white shadow-sm hover:bg-indigo-500" : "bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"}`
@@ -127,7 +127,7 @@ const Pricing_Table = ({blok}) => {
               </a>
               <ul role="list" className={`mt-8 space-y-3 text-sm leading-6 xl:mt-10 ${colourSchemes[blok?.Colour_Scheme]?.panel?.features || "text-gray-600"}`}>
                 {tier?.Features?.map((feature) => (
-                  <li key={feature.uid} className="flex gap-x-3">
+                  <li key={feature._uid} className="flex gap-x-3">
                     <CheckIcon className={`h-6 w-5 flex-none ${blok?.Colour_Scheme === "light" ? "text-indigo-600" : blok?.Colour_Scheme === "light" ? "text-white" : "text-indigo-600"} `} aria-hidden="true" />
                     {feature?.Title}
                   </li>

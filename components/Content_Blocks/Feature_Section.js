@@ -39,7 +39,7 @@ const Feature_Section = ({blok}) => {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {blok?.Features.map((feature) => (
-              <div key={feature.name} className="flex flex-col" {...storyblokEditable(feature)}>
+              <div key={feature._uid} className="flex flex-col" {...storyblokEditable(feature)}>
                 <dt className={`flex items-center gap-x-3 text-base font-semibold leading-7 ${colourSchemes[blok?.Colour_Scheme]?.panel.title || "text-white"}`}>
                   <img className="h-5 w-5 flex-none text-indigo-400" aria-hidden="true" src={feature?.Icon?.filename} />
                   {feature.Title}

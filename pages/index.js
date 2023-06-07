@@ -22,6 +22,9 @@ export async function getStaticProps(context) {
 
   let sbParams = {
     version: "draft", // or 'published'
+    resolve_relations: [
+			"Team_Section.Members"
+		],
   };
 
   const storyblokApi = getStoryblokApi();
