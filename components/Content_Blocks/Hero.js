@@ -16,7 +16,7 @@ const Hero = ({blok}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     blok?.Layout === "Simple centered with background image" ? 
-    <div className="bg-gray-900" {...storyblokEditable(blok)}>
+    <section id="main" className="bg-gray-900" {...storyblokEditable(blok)}>
       <div className="relative isolate overflow-hidden pt-14">
         <img
           src={`${blok?.Image?.filename}`}
@@ -61,10 +61,10 @@ const Hero = ({blok}) => {
           />
         </div>
       </div>
-    </div>
+    </section>
     :
     blok?.Layout === "Simple centered" ?
-    <div className="relative isolate px-6 pt-14 lg:px-8 overflow-y-hidden" {...storyblokEditable(blok)}>
+    <section id="main" className="relative isolate px-6 pt-14 lg:px-8 overflow-y-hidden" {...storyblokEditable(blok)}>
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -109,9 +109,9 @@ const Hero = ({blok}) => {
           }}
         />
       </div>
-    </div>
+    </section>
     : 
-    <section className="relative bg-white" {...storyblokEditable(blok)}>
+    <section id="main" className="relative bg-white" {...storyblokEditable(blok)}>
       <Constrained_Width className="lg:grid lg:grid-cols-12 lg:gap-x-8">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
           <div className="mx-auto max-w-2xl lg:mx-0">
