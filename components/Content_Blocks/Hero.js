@@ -20,7 +20,7 @@ const Hero = ({blok}) => {
       <div className="relative isolate overflow-hidden pt-14">
         <img
           src={`${blok?.Image?.filename}`}
-          alt={blok?.Image?.alt || `${blok?.Title.replace(/\u2028/g, '')} Hero image`}
+          alt={blok?.Image?.alt || `Hero image`}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div
