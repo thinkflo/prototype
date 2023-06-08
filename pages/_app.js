@@ -9,6 +9,8 @@ import Team_Section from "@/components/Content_Blocks/Team_Section";
 import Pricing_Table from "@/components/Content_Blocks/Pricing_Table";
 import Feature_Section from "@/components/Content_Blocks/Feature_Section";
 import Accordion from "@/components/Content_Blocks/Accordion";
+import { useEffect } from 'react'
+import analytics from '@/utils/analytics'
 
 const components = {
   Hero,
@@ -31,6 +33,11 @@ storyblokInit({
 });
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    analytics.page() 
+		// this will fire the Page Track function on every new router change.
+  }, [])
+
   return (
     <>
     <Layout {...pageProps}>
