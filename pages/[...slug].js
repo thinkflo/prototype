@@ -11,6 +11,9 @@ export default function Page({ story, preview }) {
 
 	return (
 		<>
+      <Head>
+        <title>Pixelpusher Prototype</title>
+      </Head> 		
 			{story?.content ? (
 				<StoryblokComponent
 					blok={story && story.content}

@@ -12,6 +12,9 @@ export default function Home({ story, preview }) {
 
   return (
     <>
+      <Head>
+        <title>Pixelpusher Prototype</title>
+      </Head>    
       <StoryblokComponent blok={story.content} />
     </>
   );

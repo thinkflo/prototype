@@ -21,7 +21,7 @@ const Footer = ({ blok }) => {
               {blok?.content?.Socials?.map((item) => (
                 <a key={item.Title} href={item?.Link?.cached_url}>
                   <span className="sr-only">{item.Title}</span>
-                  <img src={item?.Icon?.filename} className="h-6 w-6" />
+                  <img alt={item.Title} src={item?.Icon?.filename} className="h-6 w-6" />
                 </a>
               ))}
             </div>
