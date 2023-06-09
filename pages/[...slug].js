@@ -12,9 +12,9 @@ export default function Page({ story, preview }) {
 	return (
 		<>
       <Head>
-				<meta charset="utf-8"/>
+				<meta charSet="utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta property="og:type" content="website"/>    <meta property="og:title" content="Non-Profit, Charitable Organization | Christian Horizons"/>
 				<meta property="og:url" content="https://christianhorizons.org/"/>
 				<meta property="og:description" content="Nurturing communities of belonging since 1965."/>
