@@ -72,7 +72,7 @@ const Pricing_Table = ({blok}) => {
                 value={option}
                 className={({ checked }) =>
                   classNames(
-                    checked ? `${blok?.Colour_Scheme === "light" ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"}` : `${blok?.Colour_Scheme === "light" ? "text-gray-500" : "text-gray-500"}`,
+                    checked ? `${blok?.Colour_Scheme === "light" ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"}` : `${blok?.Colour_Scheme === "light" ? "text-gray-500" : "text-white"}`,
                     'cursor-pointer rounded-full px-2.5 py-1'
                   )
                 }

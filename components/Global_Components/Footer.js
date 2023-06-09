@@ -32,7 +32,7 @@ const Footer = ({ blok }) => {
                 <ul role="list" className="mt-6 space-y-4">
                 {blok?.content?.Solutions?.map((item) => (
                     <li key={item._uid}>
-                      <a href={item?.Link?.cached_url} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <a href={item?.Link?.cached_url || "#"} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.Title}
                       </a>
                     </li>
@@ -44,7 +44,7 @@ const Footer = ({ blok }) => {
                 <ul role="list" className="mt-6 space-y-4">
                 {blok?.content?.Support?.map((item) => (
                     <li key={item._uid}>
-                      <a href={item?.Link?.cached_url} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <a href={item?.Link?.cached_url || "#"} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.Title}
                       </a>
                     </li>
@@ -58,7 +58,7 @@ const Footer = ({ blok }) => {
                 <ul role="list" className="mt-6 space-y-4">
                   {blok?.content?.Company?.map((item) => (
                     <li key={item._uid}>
-                      <a href={item?.Link?.cached_url} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <a href={item?.Link?.cached_url || "#"} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.Title}
                       </a>
                     </li>
@@ -70,7 +70,7 @@ const Footer = ({ blok }) => {
                 <ul role="list" className="mt-6 space-y-4">
                 {blok?.content?.Legal_Menu?.map((item) => (
                     <li key={item._uid}>
-                      <a href={item?.Link?.cached_url} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <a href={item?.Link?.cached_url || "#"} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.Title}
                       </a>
                     </li>
