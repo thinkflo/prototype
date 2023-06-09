@@ -22,7 +22,7 @@ const components = {
 };
 
 storyblokInit({
-  accessToken: process.env.ACCESSTOKEN,
+  accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
   components,
   apiOptions: {
