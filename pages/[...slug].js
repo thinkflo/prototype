@@ -15,7 +15,7 @@ export default function Page({ story, preview }) {
 				<meta charSet="utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<meta property="og:type" content="website"/>    <meta property="og:title" content="Non-Profit, Charitable Organization | Christian Horizons"/>
+				<meta property="og:type" content="website"/>    <meta property="og:title" content="Brown Bag Films"/>
 				<meta property="og:url" content="https://christianhorizons.org/"/>
 				<meta property="og:description" content="Nurturing communities of belonging since 1965."/>
 				<meta property="description" content="Nurturing communities of belonging since 1965."/>
@@ -23,14 +23,14 @@ export default function Page({ story, preview }) {
 				<meta name="twitter:site" content="@chorizons"/>
 				<meta name="twitter:creator" content="@chorizons"/>
 				<meta name="twitter:card" content="summary_large_image"/>
-				<meta name="twitter:title" content="Non-Profit, Charitable Organization | Christian Horizons"/>
+				<meta name="twitter:title" content="Brown Bag Films"/>
 				<meta name="twitter:url" content="https://christianhorizons.org/"/>
 				<meta name="twitter:description" content="Nurturing communities of belonging since 1965."/>
 
 				<meta property="og:image" content=""/>
 				<meta name="twitter:image:src" content=""/>
 
-				<title>Non-Profit, Charitable Organization | Christian Horizons</title>
+				<title>Brown Bag Films</title>
 
 				<meta name='robots' content='noindex, nofollow' />
 
@@ -38,7 +38,7 @@ export default function Page({ story, preview }) {
 				<link rel="canonical" href="https://christianhorizons.org/" />
 				<meta property="og:locale" content="en-CA" />
 				<meta property="og:type" content="website" />
-				<meta property="og:title" content="Non-Profit, Charitable Organization | Christian Horizons" />
+				<meta property="og:title" content="Brown Bag Films" />
 				<meta property="og:description" content="As a non-profit, developmental services organization, Christian Horizons helps people experiencing disabilities accomplish their goals &amp; thrive in communities." />
 				<meta property="og:url" content="https://christianhorizons.org/" />
 				<meta property="og:site_name" content="ChristianHorizons" />
